@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Layer - Parallax Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 
+        Layer Template 
+        http://www.templatemo.com/preview/templatemo_438_layer
+    	-->
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}"> <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/wow-animate.css') }}"> <!-- Wow Animate -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}">
+        <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    </head>
+    <body> 
+
+
+    <div class="parallax"> 
+      <div class="bg__first templatemo-position-relative">
+        <div class="container">
+          <div class="templatemo-flexbox">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="left-image wow animated fadeInLeft">
+                  <img src="{{ url_for('static', filename='images/creative-writing.png') }}" alt="creative writing" class="img-responsive">
+                </div>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">              
+                <div class="right-caption wow animated fadeInRight">
+                  <h4>今天你写诗了吗？</h4>
+                  <h2><span class="yellow">为你</span>写诗</h2>
+                  <p>草在结它的种子，风在摇它的叶子。<span class="yellow">我们</span><span class="lightgreen">站着，</span>不说话。就十分美好。</p>
+                  <div class="stroked-button"><a href="{{ url_for('login') }}">登录</a></div><br>
+                </div>
+              </div>
+            </div>            
+          </div>          
+        </div> 
+      </div> 
+    </div>   
+    <script src="{{ url_for('static', filename='js/vendor/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/wow-animate.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // wow
+        new WOW ({
+          animateClass: 'animated',
+          offset:       100
+        }).init();
+    </script>
+	<!-- templatemo 438 layer -->
+  </body>
+{% endblock %}

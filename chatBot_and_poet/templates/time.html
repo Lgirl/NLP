@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>时间轴</title>
+
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div class="content">
+	<div class="wrapper">
+		<div class="light"><i></i></div>
+		<hr class="line-left">
+		<hr class="line-right">
+		<div class="main">
+			<h1 class="title">生活日志</h1>
+			<div class="year">
+				<h2><a href="#">2014年<i></i></a></h2>
+				<div class="list">
+					<ul>
+						<li class="cls highlight">
+							<p class="date">3月26日</p>
+							<p class="intro">今天粗去看风景了</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>商女不知亡国恨，隔江犹唱后庭花。</p>
+								<img src="{{ url_for('static', filename='images/view.jpg') }}" style="max-width: 50%;">
+							</div>
+						</li>
+						<li class="cls">
+							<p class="date">3月12日</p>
+							<p class="intro">这个风光真的是好啊！</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>两岸猿声啼不住，轻舟已过万重山。</p>
+								<p>黄沙百战穿金甲，不破楼兰终不还。</p>
+								<img src="{{ url_for('static', filename='images/view2.jpg') }}" style="max-width: 50%;">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="year">
+				<h2><a href="#">2013年<i></i></a></h2>
+				<div class="list">
+					<ul>
+						<li class="cls">
+							<p class="date">12月</p>
+							<p class="intro">今天来一波摄影</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>欲把西湖比西子，淡妆浓抹总相宜。</p>
+								<img src="{{ url_for('static', filename='images/view3.jpg') }}" style="max-width: 50%;">
+							</div>
+						</li>
+						<li class="cls">
+							<p class="date">11月</p>
+							<p class="intro">微俱聚v5.3上线</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>高三流水觅知音。</p>
+								<img src="{{ url_for('static', filename='images/view4.jpg') }}" style="max-width: 50%;">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="year">
+				<h2><a href="#">2012年<i></i></a></h2>
+				<div class="list">
+					<ul>
+						<li class="cls">
+							<p class="date">8月</p>
+							<p class="intro">顿悟</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>停车坐爱枫林晚，霜叶红于二月花。</p>
+								<img src="{{ url_for('static', filename='images/view5.jpg') }}" style="max-width: 50%;">
+							</div>
+						</li>
+						<li class="cls">
+							<p class="date">8月以前</p>
+							<p class="intro">我想去海南！！让我去海南！！好吧其实不是很想去海南！！不要带我去海南！！</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>两岸猿声啼不住，轻舟已过万重山。</p>
+								<img src="{{ url_for('static', filename='images/view6.jpg') }}" style="max-width: 50%;">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script type="text/javascript">
+$(".main .year .list").each(function(e, target){
+	var $target=  $(target),
+	$ul = $target.find("ul");
+	$target.height($ul.outerHeight()), $ul.css("position", "absolute");
+});
+$(".main .year>h2>a").click(function(e){
+	e.preventDefault();
+	$(this).parents(".year").toggleClass("close");
+});
+</script>
+
+</body>
+{% endblock %}
